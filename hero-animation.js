@@ -1,21 +1,34 @@
 // Particle animation for hero section
 class ParticleAnimation {
-  constructor(canvasId) {
+  constructor(canvasId, brandColor) {
     this.canvas = document.getElementById(canvasId);
     this.ctx = this.canvas.getContext('2d');
     this.particles = [];
     this.particleCount = 80;
     this.mouse = { x: null, y: null, radius: 150 };
+    this.brandColor = brandColor || '#6366F1';
+    
+    // Convert hex to RGB for rgba usage
+    this.brandRGB = this.hexToRgb(this.brandColor);
     
     this.init();
     this.animate();
     this.setupEventListeners();
   }
 
+  hexToRgb(hex) {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16)
+    } : { r: 99, g: 102, b: 241 };
+  }
+
   init() {
     this.resizeCanvas();
     for (let i = 0; i < this.particleCount; i++) {
-      this.particles.push(new Particle(this.canvas));
+      this.particles.push(new Particle(this.canvas, this.brandRGB));
     }
   }
 
@@ -63,7 +76,7 @@ class ParticleAnimation {
 
         if (distance < 120) {
           const opacity = 1 - distance / 120;
-          this.ctx.strokeStyle = `rgba(99, 102, 241, ${opacity * 0.3})`;
+          this.ctx.strokeStyle = `rgba(${this.brandRGB.r}, ${this.brandRGB.g}, ${this.brandRGB.b}, ${opacity * 0.3})`;
           this.ctx.lineWidth = 1;
           this.ctx.beginPath();
           this.ctx.moveTo(this.particles[a].x, this.particles[a].y);
@@ -76,8 +89,9 @@ class ParticleAnimation {
 }
 
 class Particle {
-  constructor(canvas) {
+  constructor(canvas, brandRGB) {
     this.canvas = canvas;
+    this.brandRGB = brandRGB;
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
     this.size = Math.random() * 3 + 1;
@@ -126,7 +140,7 @@ class Particle {
   }
 
   draw(ctx) {
-    ctx.fillStyle = 'rgba(99, 102, 241, 0.8)';
+    ctx.fillStyle = `rgba(${this.brandRGB.r}, ${this.brandRGB.g}, ${this.brandRGB.b}, 0.8)`;
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.closePath();
@@ -136,5 +150,6 @@ class Particle {
 
 // Initialize on load
 document.addEventListener('DOMContentLoaded', () => {
-  new ParticleAnimation('hero-canvas');
+  const brandColor = window.BRAND_COLOR || '#6366F1';
+  new ParticleAnimation('hero-canvas', brandColor);
 });
