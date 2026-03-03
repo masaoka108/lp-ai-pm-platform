@@ -1,0 +1,245 @@
+:root {
+    --brand-color: #6366F1;
+    --text-primary: #333;
+    --text-secondary: #666;
+    --bg-white: #fff;
+    --bg-alt: #f9f9f9;
+    --border-light: #e0e0e0;
+    --shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: var(--bg-white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.section.alt-bg {
+    background: var(--bg-alt);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.section-text {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 2rem auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--brand-color) 0%, rgba(var(--brand-color), 0.8) 100%);
+    color: white;
+    text-align: center;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    padding: 16px 40px;
+    background: white;
+    color: var(--brand-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.cta-button.primary {
+    background: var(--brand-color);
+    color: white;
+}
+
+.cta-button.large {
+    padding: 20px 50px;
+    font-size: 1.3rem;
+}
+
+/* Pain Points */
+.pain-points {
+    list-style: none;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.pain-points li {
+    padding: 1rem 1.5rem;
+    background: white;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--brand-color);
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+}
+
+/* USP Grid */
+.usp-grid, .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.usp-item, .benefit-item {
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.usp-item:hover, .benefit-item:hover {
+    transform: translateY(-4px);
+}
+
+.usp-item h3, .benefit-item h3 {
+    color: var(--brand-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Cases Grid */
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.case-item {
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.case-item h3 {
+    color: var(--brand-color);
+    margin-bottom: 1rem;
+}
+
+/* Details Content */
+.details-content {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+/* FAQ */
+.faq-list {
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.faq-item {
+    background: white;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.faq-item h3 {
+    color: var(--brand-color);
+    margin-bottom: 0.5rem;
+}
+
+/* CTA Section */
+.cta-section {
+    background: var(--bg-alt);
+    text-align: center;
+}
+
+/* Footer */
+.footer {
+    background: var(--text-primary);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .usp-grid, .benefits-grid, .cases-grid {
+        grid-template-columns: 1fr;
+    }
+}
