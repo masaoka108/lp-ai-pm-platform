@@ -109,6 +109,16 @@ body {
     line-height: 1.6;
 }
 
+.hero-image {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin: 2rem auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
 /* CTA Button */
 .cta-button {
     display: inline-block;
