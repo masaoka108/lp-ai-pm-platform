@@ -5,121 +5,186 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI駆動PMプラットフォーム | プロジェクト成功率を2倍に</title>
     <meta name="description" content="AIがプロジェクトマネジメントを革新。リスク予測、タスク最適化、進捗可視化を自動化し、プロジェクト成功率を飛躍的に向上させます。">
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#6366F1'
+                    }
+                }
+            }
+        }
         window.BRAND_COLOR = '#6366F1';
     </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 4px 12px rgba(0,0,0,0.5), 0 2px 4px rgba(0,0,0,0.3);
+            }
+            .text-shadow-sm {
+                text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <!-- Section 1: Hero (FV) -->
-    <section id="hero" class="section hero">
-        <canvas id="hero-canvas"></canvas>
-        <div class="hero-content">
-            <h1 class="hero-title">AI駆動で、プロジェクト成功率を2倍に</h1>
-            <p class="hero-subtitle">リスク予測・タスク最適化・進捗可視化を自動化。PMの負荷を80%削減し、チームを成果に集中させる次世代PMプラットフォーム</p>
-            <img src="images/hero.png" alt="Hero visual" class="hero-image">
-            <a href="#cta" class="cta-button primary">無料デモを見る</a>
+<body class="font-sans text-gray-800">
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800">
+        <canvas id="hero-canvas" class="absolute inset-0 w-full h-full"></canvas>
+        <div class="relative z-10 text-center text-white max-w-5xl px-6 py-8">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-6 text-shadow leading-tight">AI駆動で、プロジェクト成功率を2倍に</h1>
+            <p class="text-xl md:text-2xl mb-8 text-shadow-sm leading-relaxed opacity-95">リスク予測・タスク最適化・進捗可視化を自動化。PMの負荷を80%削減し、チームを成果に集中させる次世代PMプラットフォーム</p>
+            <img src="images/hero.png" alt="Hero visual" class="w-full max-w-3xl mx-auto my-8 rounded-xl shadow-2xl">
+            <a href="#cta" class="inline-block px-12 py-4 bg-brand text-white font-semibold text-lg rounded-full hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">無料デモを見る</a>
         </div>
     </section>
 
-    <!-- Section 2: Problem -->
-    <section id="problem" class="section">
-        <div class="container">
-            <h2 class="section-title">こんなプロジェクト管理の課題、抱えていませんか？</h2>
-            <p class="section-text">多くの企業が、プロジェクトの遅延・コスト超過・品質問題に悩んでいます。従来のツールでは、予測不可能なリスクや複雑な依存関係に対応しきれません。</p>
-            <img src="images/problem.png" alt="Problem illustration" class="section-image">
-            <ul class="pain-points">
-                <li>プロジェクトの30%が遅延・予算超過している</li>
-<li>PMが進捗管理に追われ、戦略に集中できない</li>
-<li>リスクが顕在化してから対応する「後手」の管理</li>
-<li>チーム間の情報格差で意思決定が遅れる</li>
+    <!-- Problem Section -->
+    <section id="problem" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-900">こんなプロジェクト管理の課題、抱えていませんか？</h2>
+            <p class="text-lg md:text-xl text-center text-gray-600 mb-8 max-w-3xl mx-auto">多くの企業が、プロジェクトの遅延・コスト超過・品質問題に悩んでいます。従来のツールでは、予測不可能なリスクや複雑な依存関係に対応しきれません。</p>
+            <img src="images/problem.png" alt="Problem illustration" class="w-full max-w-3xl mx-auto my-8 rounded-lg shadow-lg">
+            <ul class="max-w-2xl mx-auto space-y-4">
+                <li class="p-4 bg-white rounded-lg shadow-md border-l-4 border-brand">プロジェクトの30%が遅延・予算超過している</li>
+<li class="p-4 bg-white rounded-lg shadow-md border-l-4 border-brand">PMが進捗管理に追われ、戦略に集中できない</li>
+<li class="p-4 bg-white rounded-lg shadow-md border-l-4 border-brand">リスクが顕在化してから対応する「後手」の管理</li>
+<li class="p-4 bg-white rounded-lg shadow-md border-l-4 border-brand">チーム間の情報格差で意思決定が遅れる</li>
             </ul>
         </div>
     </section>
 
-    <!-- Section 3: Solution (USP) -->
-    <section id="solution" class="section alt-bg">
-        <div class="container">
-            <h2 class="section-title">AIがプロジェクト全体を先読みし、最適化する</h2>
-            <p class="section-text">当プラットフォームは、過去データとリアルタイム情報を学習し、リスクを事前予測。タスクの優先順位を自動調整し、PMを「管理」から「戦略」へシフトさせます。</p>
-            <img src="images/solution.png" alt="Solution overview" class="section-image">
-            <div class="usp-grid">
-                <div class="usp-item"><h3>リスク予測AI</h3><p>遅延・予算超過のリスクを最大2週間前に検知。予防的アクションを自動提案し、炎上を未然に防ぎます。</p></div>
-<div class="usp-item"><h3>タスク最適化エンジン</h3><p>チームのスキル・稼働状況・依存関係を分析し、最適なタスク割り当てと優先順位を自動生成。リソース効率を最大30%向上。</p></div>
-<div class="usp-item"><h3>リアルタイム可視化</h3><p>プロジェクト全体の健全性を1画面で把握。ステークホルダーへの報告資料を自動生成し、報告作業を90%削減。</p></div>
+    <!-- Solution Section -->
+    <section id="solution" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-900">AIがプロジェクト全体を先読みし、最適化する</h2>
+            <p class="text-lg md:text-xl text-center text-gray-600 mb-8 max-w-3xl mx-auto">当プラットフォームは、過去データとリアルタイム情報を学習し、リスクを事前予測。タスクの優先順位を自動調整し、PMを「管理」から「戦略」へシフトさせます。</p>
+            <img src="images/solution.png" alt="Solution overview" class="w-full max-w-3xl mx-auto my-8 rounded-lg shadow-lg">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="p-8 bg-white rounded-xl shadow-lg hover:-translate-y-2 transition-transform duration-300">
+    <h3 class="text-2xl font-bold text-brand mb-4">リスク予測AI</h3>
+    <p class="text-gray-700 leading-relaxed">遅延・予算超過のリスクを最大2週間前に検知。予防的アクションを自動提案し、炎上を未然に防ぎます。</p>
+  </div>
+<div class="p-8 bg-white rounded-xl shadow-lg hover:-translate-y-2 transition-transform duration-300">
+    <h3 class="text-2xl font-bold text-brand mb-4">タスク最適化エンジン</h3>
+    <p class="text-gray-700 leading-relaxed">チームのスキル・稼働状況・依存関係を分析し、最適なタスク割り当てと優先順位を自動生成。リソース効率を最大30%向上。</p>
+  </div>
+<div class="p-8 bg-white rounded-xl shadow-lg hover:-translate-y-2 transition-transform duration-300">
+    <h3 class="text-2xl font-bold text-brand mb-4">リアルタイム可視化</h3>
+    <p class="text-gray-700 leading-relaxed">プロジェクト全体の健全性を1画面で把握。ステークホルダーへの報告資料を自動生成し、報告作業を90%削減。</p>
+  </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 4: Benefits -->
-    <section id="benefits" class="section">
-        <div class="container">
-            <h2 class="section-title">導入後、プロジェクトはこう変わる</h2>
-            <p class="section-text">AIによる自動化と最適化で、プロジェクトの質・スピード・予測可能性が劇的に向上します。</p>
-            <img src="images/benefits.png" alt="Benefits visualization" class="section-image">
-            <div class="benefits-grid">
-                <div class="benefit-item"><h3>成功率 2倍</h3><p>リスク予測と自動最適化により、期限内・予算内でのプロジェクト完了率が2倍に向上</p></div>
-<div class="benefit-item"><h3>PM工数 80%削減</h3><p>進捗管理・報告・調整業務を自動化し、PMは戦略立案と意思決定に集中</p></div>
-<div class="benefit-item"><h3>リードタイム 30%短縮</h3><p>タスク最適化とボトルネック自動検知により、プロジェクト全体のリードタイムを短縮</p></div>
-<div class="benefit-item"><h3>透明性の向上</h3><p>全ステークホルダーがリアルタイムで進捗・リスクを把握。意思決定の速度が3倍に</p></div>
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-900">導入後、プロジェクトはこう変わる</h2>
+            <p class="text-lg md:text-xl text-center text-gray-600 mb-8 max-w-3xl mx-auto">AIによる自動化と最適化で、プロジェクトの質・スピード・予測可能性が劇的に向上します。</p>
+            <img src="images/benefits.png" alt="Benefits visualization" class="w-full max-w-3xl mx-auto my-8 rounded-lg shadow-lg">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                <div class="p-8 bg-white rounded-xl shadow-lg hover:-translate-y-2 transition-transform duration-300">
+    <h3 class="text-2xl font-bold text-brand mb-4">成功率 2倍</h3>
+    <p class="text-gray-700 leading-relaxed">リスク予測と自動最適化により、期限内・予算内でのプロジェクト完了率が2倍に向上</p>
+  </div>
+<div class="p-8 bg-white rounded-xl shadow-lg hover:-translate-y-2 transition-transform duration-300">
+    <h3 class="text-2xl font-bold text-brand mb-4">PM工数 80%削減</h3>
+    <p class="text-gray-700 leading-relaxed">進捗管理・報告・調整業務を自動化し、PMは戦略立案と意思決定に集中</p>
+  </div>
+<div class="p-8 bg-white rounded-xl shadow-lg hover:-translate-y-2 transition-transform duration-300">
+    <h3 class="text-2xl font-bold text-brand mb-4">リードタイム 30%短縮</h3>
+    <p class="text-gray-700 leading-relaxed">タスク最適化とボトルネック自動検知により、プロジェクト全体のリードタイムを短縮</p>
+  </div>
+<div class="p-8 bg-white rounded-xl shadow-lg hover:-translate-y-2 transition-transform duration-300">
+    <h3 class="text-2xl font-bold text-brand mb-4">透明性の向上</h3>
+    <p class="text-gray-700 leading-relaxed">全ステークホルダーがリアルタイムで進捗・リスクを把握。意思決定の速度が3倍に</p>
+  </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 5: Case Studies -->
-    <section id="cases" class="section alt-bg">
-        <div class="container">
-            <h2 class="section-title">導入企業の成功事例</h2>
-            <p class="section-text">業界を問わず、プロジェクトマネジメントの質を飛躍的に向上させています。</p>
-            <img src="images/cases.png" alt="Case studies" class="section-image">
-            <div class="cases-grid">
-                <div class="case-item"><h3>大手SIer A社</h3><p>20案件同時進行でプロジェクト遅延率を50%削減。PMの残業時間が月40時間減少</p></div>
-<div class="case-item"><h3>製造業B社</h3><p>新製品開発プロジェクトのリードタイムを35%短縮。予算超過ゼロを達成</p></div>
-<div class="case-item"><h3>コンサルティングC社</h3><p>クライアント案件の可視化により、顧客満足度が20ポイント向上</p></div>
+    <!-- Cases Section -->
+    <section id="cases" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-900">導入企業の成功事例</h2>
+            <p class="text-lg md:text-xl text-center text-gray-600 mb-8 max-w-3xl mx-auto">業界を問わず、プロジェクトマネジメントの質を飛躍的に向上させています。</p>
+            <img src="images/cases.png" alt="Case studies" class="w-full max-w-3xl mx-auto my-8 rounded-lg shadow-lg">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="p-8 bg-white rounded-xl shadow-lg">
+    <h3 class="text-xl font-bold text-brand mb-3">大手SIer A社</h3>
+    <p class="text-gray-700 leading-relaxed">20案件同時進行でプロジェクト遅延率を50%削減。PMの残業時間が月40時間減少</p>
+  </div>
+<div class="p-8 bg-white rounded-xl shadow-lg">
+    <h3 class="text-xl font-bold text-brand mb-3">製造業B社</h3>
+    <p class="text-gray-700 leading-relaxed">新製品開発プロジェクトのリードタイムを35%短縮。予算超過ゼロを達成</p>
+  </div>
+<div class="p-8 bg-white rounded-xl shadow-lg">
+    <h3 class="text-xl font-bold text-brand mb-3">コンサルティングC社</h3>
+    <p class="text-gray-700 leading-relaxed">クライアント案件の可視化により、顧客満足度が20ポイント向上</p>
+  </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 6: Service Details -->
-    <section id="details" class="section">
-        <div class="container">
-            <h2 class="section-title">サービス詳細</h2>
-            <p class="section-text">プロジェクト規模・業種に応じた柔軟なプラン</p>
-            <img src="images/details.png" alt="Service details" class="section-image">
-            <div class="details-content">
+    <!-- Details Section -->
+    <section id="details" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-900">サービス詳細</h2>
+            <p class="text-lg md:text-xl text-center text-gray-600 mb-8 max-w-3xl mx-auto">プロジェクト規模・業種に応じた柔軟なプラン</p>
+            <img src="images/details.png" alt="Service details" class="w-full max-w-3xl mx-auto my-8 rounded-lg shadow-lg">
+            <div class="max-w-3xl mx-auto mt-8 bg-white p-8 rounded-lg shadow-lg details-content">
                 <h3>提供機能</h3><ul><li><strong>AIリスク予測:</strong> 過去データ学習による遅延・予算超過の事前検知</li><li><strong>タスク最適化:</strong> リソース・スキル・依存関係を考慮した自動割り当て</li><li><strong>進捗ダッシュボード:</strong> リアルタイム可視化と自動レポート生成</li><li><strong>統合連携:</strong> Jira / Asana / Slack / Microsoft Teams 連携</li></ul><h3>プラン</h3><ul><li><strong>スタンダード:</strong> 月額10万円〜（5プロジェクト、50ユーザーまで）</li><li><strong>エンタープライズ:</strong> 個別見積（無制限プロジェクト、カスタムAI学習）</li></ul><h3>導入フロー</h3><ol><li>無料デモ・ヒアリング（1週間）</li><li>トライアル導入（1ヶ月）</li><li>本格運用開始（専任サポート付き）</li></ol>
             </div>
         </div>
     </section>
 
-    <!-- Section 7: FAQ -->
-    <section id="faq" class="section alt-bg">
-        <div class="container">
-            <h2 class="section-title">よくある質問</h2>
-            <img src="images/faq.png" alt="FAQ" class="section-image">
-            <div class="faq-list">
-                <div class="faq-item"><h3>既存のプロジェクト管理ツールと併用できますか？</h3><p>はい。Jira、Asana、Trello、Microsoft Projectなど主要ツールとAPI連携が可能です。既存データを移行する必要はありません。</p></div>
-<div class="faq-item"><h3>AIの予測精度はどの程度ですか？</h3><p>導入初期で約70%、3ヶ月の学習期間を経て85%以上の精度を達成しています。プロジェクトデータが蓄積されるほど精度が向上します。</p></div>
-<div class="faq-item"><h3>導入にどれくらいの期間がかかりますか？</h3><p>標準的なケースで、デモ〜トライアル開始まで2週間、本格運用まで1.5ヶ月です。専任のカスタマーサクセスチームがサポートします。</p></div>
-<div class="faq-item"><h3>セキュリティ対策は？</h3><p>ISO27001認証取得済み。データは全て暗号化され、オンプレミス展開にも対応しています。</p></div>
-<div class="faq-item"><h3>小規模チームでも利用できますか？</h3><p>はい。5名〜のスタートアッププランもご用意しています。まずは1プロジェクトからお試しいただけます。</p></div>
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900">よくある質問</h2>
+            <img src="images/faq.png" alt="FAQ" class="w-full max-w-3xl mx-auto mb-8 rounded-lg shadow-lg">
+            <div class="space-y-4">
+                <div class="p-6 bg-white rounded-lg shadow-md mb-4">
+    <h3 class="text-lg font-bold text-brand mb-2">既存のプロジェクト管理ツールと併用できますか？</h3>
+    <p class="text-gray-700 leading-relaxed">はい。Jira、Asana、Trello、Microsoft Projectなど主要ツールとAPI連携が可能です。既存データを移行する必要はありません。</p>
+  </div>
+<div class="p-6 bg-white rounded-lg shadow-md mb-4">
+    <h3 class="text-lg font-bold text-brand mb-2">AIの予測精度はどの程度ですか？</h3>
+    <p class="text-gray-700 leading-relaxed">導入初期で約70%、3ヶ月の学習期間を経て85%以上の精度を達成しています。プロジェクトデータが蓄積されるほど精度が向上します。</p>
+  </div>
+<div class="p-6 bg-white rounded-lg shadow-md mb-4">
+    <h3 class="text-lg font-bold text-brand mb-2">導入にどれくらいの期間がかかりますか？</h3>
+    <p class="text-gray-700 leading-relaxed">標準的なケースで、デモ〜トライアル開始まで2週間、本格運用まで1.5ヶ月です。専任のカスタマーサクセスチームがサポートします。</p>
+  </div>
+<div class="p-6 bg-white rounded-lg shadow-md mb-4">
+    <h3 class="text-lg font-bold text-brand mb-2">セキュリティ対策は？</h3>
+    <p class="text-gray-700 leading-relaxed">ISO27001認証取得済み。データは全て暗号化され、オンプレミス展開にも対応しています。</p>
+  </div>
+<div class="p-6 bg-white rounded-lg shadow-md mb-4">
+    <h3 class="text-lg font-bold text-brand mb-2">小規模チームでも利用できますか？</h3>
+    <p class="text-gray-700 leading-relaxed">はい。5名〜のスタートアッププランもご用意しています。まずは1プロジェクトからお試しいただけます。</p>
+  </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 8: CTA -->
-    <section id="cta" class="section cta-section">
-        <div class="container">
-            <h2 class="section-title">今すぐ、プロジェクト管理を次のレベルへ</h2>
-            <p class="section-text">無料デモで、AIがあなたのプロジェクトをどう変えるかをご体験ください</p>
-            <img src="images/cta.png" alt="Call to action" class="section-image">
-            <a href="#contact" class="cta-button primary large">無料デモを申し込む</a>
+    <!-- CTA Section -->
+    <section id="cta" class="py-20 bg-gray-50 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">今すぐ、プロジェクト管理を次のレベルへ</h2>
+            <p class="text-lg md:text-xl text-gray-600 mb-8">無料デモで、AIがあなたのプロジェクトをどう変えるかをご体験ください</p>
+            <img src="images/cta.png" alt="Call to action" class="w-full max-w-3xl mx-auto my-8 rounded-lg shadow-lg">
+            <a href="#contact" class="inline-block px-16 py-5 bg-brand text-white font-bold text-xl rounded-full hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">無料デモを申し込む</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
+    <footer class="bg-gray-900 text-white py-8 text-center">
+        <div class="max-w-6xl mx-auto px-6">
             <p>© 2026 AI-Driven PM Platform</p>
         </div>
     </footer>
